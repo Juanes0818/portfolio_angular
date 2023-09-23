@@ -1,0 +1,63 @@
+<br><br><br>
+<div class="container">
+    <div class="row col-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form #juegoForm="ngForm" (ngSubmit)="editar(juegoForm)">
+                    <div class="col-md-12 mb-2">
+                        <label for="">Nombre del Juego</label>
+                        <textarea name="nombre" placeholder="Titulo del Juego" class="form-control" rows="3" [(ngModel)]="juego.vid_nombre" required #nombre="ngModel"></textarea>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="nombre.valid || nombre.pristine">
+                        El nombre es obligatorio
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label for="">Descripcion</label>
+                        <textarea name="descripcion" placeholder="Descripcion" class="form-control" rows="3" [(ngModel)]="juego.vid_descripcion" required #descrip="ngModel"></textarea>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="descrip.valid || descrip.pristine">
+                        La descripcion es obligatoria
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label for="">Precio</label>
+                        <input type="number" name="precio" placeholder="Precio" class="form-control" [(ngModel)]="juego.vid_precio" required min="0" #precio="ngModel">
+                    </div>
+                    <div class="alert alert-danger" [hidden]="precio.valid || precio.pristine">
+                        El precio es obligatorio
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label for="">Estado</label>
+                        <select name="estado" class="form-control" [(ngModel)]="juego.vid_estado" required #estado="ngModel">
+                            <option value="">Seleccione un estado...</option>
+                            <option value="A">Activo</option>
+                            <option value="I">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="estado.valid || estado.pristine">
+                        El estado es obligatorio
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label for="">Genero</label>
+                        <select name="genero" class="form-control" [(ngModel)]="juego.gen_descripcion" required #genero="ngModel">
+                            <option value="">Seleccione un genero...</option>
+                            <option *ngFor="let genero of generos" [value]="genero.gen_id">{{genero.gen_descripcion}}</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="genero.valid || genero.pristine || !genero.dirty">
+                        El genero es obligatorio
+                    </div>
+
+                    <div class="d-grid gab-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="juegoForm.invalid || !genero.dirty">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

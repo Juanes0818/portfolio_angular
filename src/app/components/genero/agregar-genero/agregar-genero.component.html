@@ -1,0 +1,36 @@
+<br><br><br>
+<div class="container">
+    <div class="row col-6 mx-auto">
+        <div class="card">
+            <div class="card-body">
+                <form #generoForm="ngForm" (ngSubmit)="agregar()">
+                    <div class="col-md-12 mb-2">
+                        <label for="">Nombre del Genero</label>
+                        <textarea name="descripcion" placeholder="Nombre del Genero" class="form-control" rows="3" [(ngModel)]="genero.gen_descripcion" required #descrip="ngModel"></textarea>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="descrip.valid || descrip.pristine">
+                        El nombre es obligatoria
+                    </div>
+
+                    <div class="col-md-12 mb-2">
+                        <label for="">Estado</label>
+                        <select name="estado" class="form-control" [(ngModel)]="genero.gen_estado" required #estado="ngModel">
+                            <option value="">Seleccione un estado...</option>
+                            <option value="A">Activo</option>
+                            <option value="I">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-danger" [hidden]="estado.valid || estado.pristine">
+                        El estado es obligatorio
+                    </div>
+
+                    <div class="d-grid gab-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="generoForm.invalid">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
