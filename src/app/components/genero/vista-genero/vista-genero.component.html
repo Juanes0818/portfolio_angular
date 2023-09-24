@@ -3,7 +3,7 @@
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <a href="/Master/agregar_genero" class="btn btn-success">Agregar</a>
+                <a href="/portfolio_angular/Master/agregar_genero" class="btn btn-success">Agregar</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped table-bordered">
@@ -19,7 +19,7 @@
                             <th scope="row" class="align-middle text-center">{{genero.gen_id}}</th>
                             <td class="align-middle text-center">{{genero.gen_descripcion}}</td>
                             <td class="align-middle text-center">{{genero.gen_estado}}</td>
-                            <td class="align-middle text-center"><a href="/Master/editar_genero/{{genero.gen_id}}" class="btn btn-warning text-white">Editar</a></td>
+                            <td class="align-middle text-center"><a href="/portfolio_angular/Master/editar_genero/{{genero.gen_id}}" class="btn btn-warning text-white">Editar</a></td>
                             <td class="align-middle text-center"><button name="id" type="button" class="btn btn-danger" (click)="eliminar(genero.gen_id)">Eliminar</button></td>
                         </tr>
                     </tbody>

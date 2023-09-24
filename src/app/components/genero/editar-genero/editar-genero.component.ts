@@ -30,7 +30,7 @@ export class EditarGeneroComponent implements OnInit{
           if (resultado !== "Resgistro modificado") {
              alert('Ocurrió un error o la información no ha sufrido cambios');
           } else {
-             this.router.navigate(['/Master/generos']);
+             this.router.navigate(['/portfolio_angular/Master/generos']);
           }
        });
     }

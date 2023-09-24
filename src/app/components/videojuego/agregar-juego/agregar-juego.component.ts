@@ -36,7 +36,7 @@ export class AgregarJuegoComponent implements OnInit{
       if (resultado !== "Nuevo resgistro guardado") {
         alert('Error al insertar informacion');
       } else {
-        this.router.navigate(['/Master/videojuegos']);
+        this.router.navigate(['/portfolio_angular/Master/videojuegos']);
       }
     });
   }

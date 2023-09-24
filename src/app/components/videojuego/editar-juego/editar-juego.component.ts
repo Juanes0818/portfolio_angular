@@ -44,7 +44,7 @@ export class EditarJuegoComponent implements OnInit{
           alert('Ocurrio un error o la informacion no ha sufrido cambios');
         }
         else{
-          this.router.navigate(['/Master/videojuegos']);
+          this.router.navigate(['/portfolio_angular/Master/videojuegos']);
         }
       });
     }
